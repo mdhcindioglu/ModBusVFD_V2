@@ -24,21 +24,21 @@ namespace ModBusV1.Forms
 
             for (int i = 0; i < cmbComPort.Items.Count - 1; i++)
             {
-                if (cmbComPort.Items[i].ToString() == Properties.Settings.Default.ComPort)
+                if (cmbComPort.Items[i].ToString() == Properties.Settings.Default.PortName)
                     cmbComPort.SelectedIndex = i;
             }
 
-            cmbBaudrate.DataSource = FrmMain.BaudRate;
+            cmbBaudrate.DataSource = VFD.BaudRates;
             cmbBaudrate.Text = Properties.Settings.Default.Baudrate.ToString();
 
-            cmbDataBits.DataSource = FrmMain.DataBits;
+            cmbDataBits.DataSource = VFD.DataBits;
             cmbDataBits.Text = Properties.Settings.Default.DataBits.ToString();
 
             cmbParityBits.DataSource = Enum.GetNames(typeof(Parity));
-            cmbParityBits.SelectedIndex = Properties.Settings.Default.ParityBits;
+            cmbParityBits.SelectedItem = Properties.Settings.Default.ParityBits;
 
             cmbStopBits.DataSource = Enum.GetNames(typeof(StopBits));
-            cmbStopBits.SelectedIndex = Properties.Settings.Default.StopBits;
+            cmbStopBits.SelectedItem = Properties.Settings.Default.StopBits;
 
             NumAddress.Value = Properties.Settings.Default.Address;
             NumRefresh.Value = Properties.Settings.Default.Refresh;

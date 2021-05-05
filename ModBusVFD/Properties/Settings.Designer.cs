@@ -38,12 +38,12 @@ namespace ModBusV1.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ComPort {
+        public string PortName {
             get {
-                return ((string)(this["ComPort"]));
+                return ((string)(this["PortName"]));
             }
             set {
-                this["ComPort"] = value;
+                this["PortName"] = value;
             }
         }
         
@@ -61,10 +61,10 @@ namespace ModBusV1.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int ParityBits {
+        [global::System.Configuration.DefaultSettingValueAttribute("Even")]
+        public global::System.IO.Ports.Parity ParityBits {
             get {
-                return ((int)(this["ParityBits"]));
+                return ((global::System.IO.Ports.Parity)(this["ParityBits"]));
             }
             set {
                 this["ParityBits"] = value;
@@ -73,10 +73,10 @@ namespace ModBusV1.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int StopBits {
+        [global::System.Configuration.DefaultSettingValueAttribute("One")]
+        public global::System.IO.Ports.StopBits StopBits {
             get {
-                return ((int)(this["StopBits"]));
+                return ((global::System.IO.Ports.StopBits)(this["StopBits"]));
             }
             set {
                 this["StopBits"] = value;
@@ -104,6 +104,18 @@ namespace ModBusV1.Properties {
             }
             set {
                 this["Address"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Actions {
+            get {
+                return ((string)(this["Actions"]));
+            }
+            set {
+                this["Actions"] = value;
             }
         }
     }
